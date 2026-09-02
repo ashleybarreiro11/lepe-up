@@ -49,12 +49,12 @@ export const colors = {
 };
 
 export const gradients = {
-  mark: ['#E8203A', '#B0132A'] as const,
+  mark: ['#1F5CCF', '#E8203A'] as const,
   button: ['#3E7BFF', '#1F5CCF'] as const,
   slider: ['#FF6070', '#E8203A'] as const,
-  banner: ['rgba(232,32,58,0.20)', 'rgba(11,11,14,0.2)'] as const,
-  heroCard: ['rgba(232,32,58,0.14)', 'rgba(176,19,42,0.10)', 'rgba(255,255,255,0.02)'] as const,
-  chatBar: ['rgba(232,32,58,0.13)', 'rgba(176,19,42,0.10)'] as const,
+  banner: ['rgba(31,92,207,0.20)', 'rgba(232,32,58,0.20)'] as const,
+  heroCard: ['rgba(31,92,207,0.16)', 'rgba(232,32,58,0.14)', 'rgba(255,255,255,0.02)'] as const,
+  chatBar: ['rgba(31,92,207,0.14)', 'rgba(232,32,58,0.14)'] as const,
 };
 
 export const fonts = {
