@@ -13,6 +13,8 @@ export const colors = {
   blue: '#1F5CCF',
   blueBright: '#3E7BFF',
   blueLight: '#A5BEEC',
+  blueHighlight: '#EAF2FF',
+  blueNavy: '#12225C',
   green: '#4ADE80',
   greenSoft: '#8FE7AC',
 
@@ -49,7 +51,8 @@ export const colors = {
 };
 
 export const gradients = {
-  mark: ['#3E7BFF', '#E8203A'] as const,
+  mark: ['#EAF2FF', '#3E7BFF', '#12225C', '#E8203A'] as const,
+  markLocations: [0, 0.32, 0.7, 1] as const,
   button: ['#3E7BFF', '#1F5CCF'] as const,
   slider: ['#FF6070', '#E8203A'] as const,
   banner: ['rgba(31,92,207,0.20)', 'rgba(232,32,58,0.20)'] as const,

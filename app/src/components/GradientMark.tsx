@@ -8,6 +8,7 @@ export function GradientMark({ size = 34, dotSize }: { size?: number; dotSize?: 
   return (
     <LinearGradient
       colors={gradients.mark}
+      locations={gradients.markLocations}
       start={{ x: 0.15, y: 0 }}
       end={{ x: 0.85, y: 1 }}
       style={{
