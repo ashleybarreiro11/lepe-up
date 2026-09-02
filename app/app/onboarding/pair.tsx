@@ -7,10 +7,12 @@ import { PrimaryButton } from '../../src/components/PrimaryButton';
 import { ProgressDots } from '../../src/components/ProgressDots';
 import { RadialGlow } from '../../src/components/RadialGlow';
 import { Breathe } from '../../src/components/Breathe';
+import { useApp } from '../../src/state/AppContext';
 import { colors, fonts } from '../../src/theme/theme';
 
 export default function OnboardingPair() {
   const router = useRouter();
+  const { chargeLabel, chargeStartLabel } = useApp();
   return (
     <Screen>
       <SafeAreaView style={{ flex: 1, paddingHorizontal: 26, paddingTop: 8 }}>
@@ -77,8 +79,8 @@ export default function OnboardingPair() {
 
         <View style={{ gap: 14, paddingBottom: 12 }}>
           <Text style={{ fontFamily: fonts.plexRegular, fontSize: 13, lineHeight: 20, color: colors.onDark.text45 }}>
-            La mesita también carga tu celular por inducción. Después podrás elegir cuánto tiempo mantiene la
-            carga antes de cortarla: 2 h por defecto.
+            La mesita también carga tu celular por inducción, empezando automáticamente a las {chargeStartLabel}.
+            Después podrás elegir cuánto tiempo mantiene la carga antes de cortarla: {chargeLabel} por defecto.
           </Text>
           <View
             style={{
