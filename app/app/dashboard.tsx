@@ -172,6 +172,55 @@ export default function Dashboard() {
             </View>
           </View>
 
+          <View
+            style={{
+              borderRadius: 20,
+              borderWidth: 1,
+              borderColor: colors.borderSoft,
+              backgroundColor: colors.fillSoft,
+              padding: 18,
+              gap: 14,
+            }}
+          >
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 13 }}>
+              <View
+                style={{
+                  width: 34,
+                  height: 34,
+                  borderRadius: 12,
+                  backgroundColor: 'rgba(255,255,255,0.06)',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <IconAlarmClock size={16} color="rgba(255,255,255,0.55)" strokeWidth={1.6} />
+              </View>
+              <View style={{ flex: 1, gap: 2 }}>
+                <Text style={{ fontFamily: fonts.soraRegular, fontSize: 15, color: colors.text }}>Alarmas distintas por día</Text>
+                <Text style={{ fontFamily: fonts.plexRegular, fontSize: 12.5, lineHeight: 18, color: colors.onDark.text40 }}>
+                  Ej. jueves 5:00 a.m., el resto de la semana 06:40 a.m.
+                </Text>
+              </View>
+            </View>
+            <Pressable
+              onPress={() => router.push('/chat')}
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 8,
+                borderRadius: 13,
+                borderWidth: 1,
+                borderColor: 'rgba(232,32,58,0.35)',
+                backgroundColor: 'rgba(232,32,58,0.10)',
+                paddingVertical: 11,
+              }}
+            >
+              <IconMic size={14} color={colors.redSofter} strokeWidth={1.6} />
+              <Text style={{ fontFamily: fonts.plexMedium, fontSize: 13.5, color: colors.redSofter }}>Pídeselo a LepeUp</Text>
+            </Pressable>
+          </View>
+
           {state.suggestionOpen && (
             <View
               style={{
