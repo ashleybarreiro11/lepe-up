@@ -31,7 +31,7 @@ export const CHIPS = [
 
 export const REPLIES: Record<string, string> = {
   'Ambiental estilo Wakanda':
-    'Listo: percusión profunda y coro bajo, volumen máximo al 40 %. Lo dejo como tono ambiental de la subida de luz.',
+    'Listo: percusión profunda y coro bajo, volumen máximo al 40 %. Es un sonido nuevo, guardado como tu tono "Personalizado", y sonará mientras sube la luz.',
   'Ruido blanco suave inspirado en anime':
     'Puse un lecho de ruido blanco con lluvia lejana. Se apagará solo 45 minutos después de que te duermas.',
   'Cambiar horario de alarma': '¿Para qué hora la muevo? Puedes decirme algo como "mañana a las 5:15".',
@@ -46,6 +46,8 @@ const RISE_MAX = 300;
 const CHARGE_MIN = 30;
 const CHARGE_MAX = 360;
 
+export const DAY_LABELS = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+
 type AppState = {
   rise: number;
   charge: number;
@@ -54,6 +56,7 @@ type AppState = {
   freq: FreqKey;
   suggestionOpen: boolean;
   alarm: AlarmInfo;
+  activeDays: boolean[];
   mic: boolean;
   draft: string;
   messages: ChatMessage[];
@@ -78,6 +81,10 @@ type AppContextValue = {
   toggleMic: () => void;
   setDraft: (text: string) => void;
   send: (text?: string) => void;
+  toggleDay: (index: number) => void;
+  adjustAlarmHour: () => void;
+  adjustAlarmMinute: () => void;
+  toggleAlarmMeridiem: () => void;
 };
 
 const AppContext = createContext<AppContextValue | null>(null);
@@ -93,6 +100,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     freq: 'semana',
     suggestionOpen: true,
     alarm: { time: '06:40', mer: 'a.m.', day: 'Mañana, miércoles', in: '8 h 12 min' },
+    activeDays: [true, true, true, true, true, false, false],
     mic: false,
     draft: '',
     deviceBattery: 82,
@@ -122,6 +130,38 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     []
   );
   const dismissSuggestion = useCallback(() => setState((s) => ({ ...s, suggestionOpen: false })), []);
+  const toggleDay = useCallback(
+    (index: number) =>
+      setState((s) => {
+        const activeDays = [...s.activeDays];
+        activeDays[index] = !activeDays[index];
+        return { ...s, activeDays };
+      }),
+    []
+  );
+  const pad = (n: number) => String(n).padStart(2, '0');
+  const adjustAlarmHour = useCallback(
+    () =>
+      setState((s) => {
+        const [h, m] = s.alarm.time.split(':').map(Number);
+        const nextH = h >= 12 ? 1 : h + 1;
+        return { ...s, alarm: { ...s.alarm, time: `${pad(nextH)}:${pad(m)}` } };
+      }),
+    []
+  );
+  const adjustAlarmMinute = useCallback(
+    () =>
+      setState((s) => {
+        const [h, m] = s.alarm.time.split(':').map(Number);
+        const nextM = m >= 55 ? 0 : m + 5;
+        return { ...s, alarm: { ...s.alarm, time: `${pad(h)}:${pad(nextM)}` } };
+      }),
+    []
+  );
+  const toggleAlarmMeridiem = useCallback(
+    () => setState((s) => ({ ...s, alarm: { ...s.alarm, mer: s.alarm.mer === 'a.m.' ? 'p.m.' : 'a.m.' } })),
+    []
+  );
   const toggleMic = useCallback(() => setState((s) => ({ ...s, mic: !s.mic })), []);
   const setDraft = useCallback((text: string) => setState((s) => ({ ...s, draft: text })), []);
   const send = useCallback((text?: string) => {
@@ -165,6 +205,10 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       toggleMic,
       setDraft,
       send,
+      toggleDay,
+      adjustAlarmHour,
+      adjustAlarmMinute,
+      toggleAlarmMeridiem,
     }),
     [state, riseLabel, chargeLabel, rotationNote, risePct, chargePct, activeFreq]
   );
