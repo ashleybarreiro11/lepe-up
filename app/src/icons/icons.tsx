@@ -3,16 +3,16 @@ import Svg, { Circle, Path, Rect } from 'react-native-svg';
 
 type IconProps = { size?: number; color?: string; strokeWidth?: number };
 
+const GEAR_TEETH_ANGLES = [0, 45, 90, 135, 180, 225, 270, 315];
+
 export function IconGear({ size = 17, color = 'rgba(244,244,246,0.6)', strokeWidth = 1.5 }: IconProps) {
   return (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-      <Circle cx="12" cy="12" r="3.2" stroke={color} strokeWidth={strokeWidth} />
-      <Path
-        d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"
-        stroke={color}
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-      />
+      {GEAR_TEETH_ANGLES.map((angle) => (
+        <Rect key={angle} x="10.3" y="1.4" width="3.4" height="3.6" rx="1" fill={color} transform={`rotate(${angle} 12 12)`} />
+      ))}
+      <Circle cx="12" cy="12" r="5.6" stroke={color} strokeWidth={strokeWidth} />
+      <Circle cx="12" cy="12" r="2" fill={color} />
     </Svg>
   );
 }
