@@ -23,8 +23,8 @@ export default function OnboardingWelcome() {
             size={420}
             stops={[
               { offset: '0', color: '#E8203A', opacity: 0.3 },
-              { offset: '0.55', color: '#6D18C4', opacity: 0.1 },
-              { offset: '0.72', color: '#6D18C4', opacity: 0 },
+              { offset: '0.55', color: '#B0132A', opacity: 0.1 },
+              { offset: '0.72', color: '#B0132A', opacity: 0 },
             ]}
           />
         </Breathe>

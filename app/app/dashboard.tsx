@@ -225,7 +225,7 @@ export default function Dashboard() {
               style={{
                 borderRadius: 22,
                 borderWidth: 1,
-                borderColor: 'rgba(109,24,196,0.34)',
+                borderColor: 'rgba(232,32,58,0.34)',
                 overflow: 'hidden',
                 padding: 18,
                 paddingBottom: 16,
@@ -244,11 +244,11 @@ export default function Dashboard() {
                     justifyContent: 'center',
                   }}
                 >
-                  <IconCalendar size={15} color="#C99BFF" strokeWidth={1.6} />
+                  <IconCalendar size={15} color={colors.redSofter} strokeWidth={1.6} />
                 </View>
                 <View style={{ gap: 5, flex: 1 }}>
                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-                    <Text style={{ fontFamily: fonts.plexRegular, fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', color: 'rgba(201,155,255,0.8)' }}>
+                    <Text style={{ fontFamily: fonts.plexRegular, fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', color: 'rgba(255,138,150,0.85)' }}>
                       Sugerencia del calendario
                     </Text>
                     <View

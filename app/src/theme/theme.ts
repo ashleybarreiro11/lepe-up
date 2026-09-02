@@ -10,9 +10,6 @@ export const colors = {
   redSoft: '#FF6070',
   redSofter: '#FF8A96',
   redDeep: '#B0132A',
-  purple: '#6D18C4',
-  purpleDeep: '#4C0F91',
-  purpleLight: '#C99BFF',
   blue: '#1F5CCF',
   blueBright: '#3E7BFF',
   blueLight: '#A5BEEC',
@@ -52,12 +49,12 @@ export const colors = {
 };
 
 export const gradients = {
-  mark: ['#E8203A', '#6D18C4'] as const,
+  mark: ['#E8203A', '#B0132A'] as const,
   button: ['#3E7BFF', '#1F5CCF'] as const,
-  slider: ['#6D18C4', '#E8203A'] as const,
-  banner: ['rgba(109,24,196,0.20)', 'rgba(11,11,14,0.2)'] as const,
-  heroCard: ['rgba(232,32,58,0.14)', 'rgba(109,24,196,0.10)', 'rgba(255,255,255,0.02)'] as const,
-  chatBar: ['rgba(232,32,58,0.13)', 'rgba(109,24,196,0.10)'] as const,
+  slider: ['#FF6070', '#E8203A'] as const,
+  banner: ['rgba(232,32,58,0.20)', 'rgba(11,11,14,0.2)'] as const,
+  heroCard: ['rgba(232,32,58,0.14)', 'rgba(176,19,42,0.10)', 'rgba(255,255,255,0.02)'] as const,
+  chatBar: ['rgba(232,32,58,0.13)', 'rgba(176,19,42,0.10)'] as const,
 };
 
 export const fonts = {
