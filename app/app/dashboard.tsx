@@ -196,7 +196,7 @@ export default function Dashboard() {
                 <IconAlarmClock size={16} color="rgba(255,255,255,0.55)" strokeWidth={1.6} />
               </View>
               <View style={{ flex: 1, gap: 2 }}>
-                <Text style={{ fontFamily: fonts.soraRegular, fontSize: 15, color: colors.text }}>Alarmas distintas por día</Text>
+                <Text style={{ fontFamily: fonts.soraRegular, fontSize: 15, color: colors.text }}>Alarmas personalizadas</Text>
                 <Text style={{ fontFamily: fonts.plexRegular, fontSize: 12.5, lineHeight: 18, color: colors.onDark.text40 }}>
                   Ej. jueves 5:00 a.m., el resto de la semana 06:40 a.m.
                 </Text>
@@ -216,7 +216,6 @@ export default function Dashboard() {
                 paddingVertical: 11,
               }}
             >
-              <IconMic size={14} color={colors.redSofter} strokeWidth={1.6} />
               <Text style={{ fontFamily: fonts.plexMedium, fontSize: 13.5, color: colors.redSofter }}>Pídeselo a LepeUp</Text>
             </Pressable>
           </View>

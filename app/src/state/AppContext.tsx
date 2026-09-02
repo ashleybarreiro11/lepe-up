@@ -25,7 +25,7 @@ export const CHIPS = [
   'Ambiental estilo Wakanda',
   'Ruido blanco suave inspirado en anime',
   'Cambiar horario de alarma',
-  'Alarmas distintas por día',
+  'Alarmas personalizadas',
   'Tono inspirado en los Simpson',
   'Revisar mi calendario',
 ];
@@ -36,7 +36,7 @@ export const REPLIES: Record<string, string> = {
   'Ruido blanco suave inspirado en anime':
     'Puse un lecho de ruido blanco con lluvia lejana. Se apagará solo 45 minutos después de que te duermas.',
   'Cambiar horario de alarma': '¿Para qué hora la muevo? Puedes decirme algo como "mañana a las 5:15".',
-  'Alarmas distintas por día':
+  'Alarmas personalizadas':
     'Claro, dime los días y horas. Por ejemplo: "jueves a las 5:00 a.m. y el resto de la semana a las 06:40 a.m.", y dejo cada día como corresponda.',
   'Tono inspirado en los Simpson':
     'Armé una versión suave del tema de los Simpson: solo vientos y xilófono, sin metales. Queda guardado como tono Personalizado.',
