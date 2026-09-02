@@ -31,7 +31,7 @@ export default function Chat() {
           >
             <BackHeader />
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
-              <GradientMark size={26} dotSize={0} />
+              <GradientMark size={26} />
               <View>
                 <Text style={{ fontFamily: fonts.soraMedium, fontSize: 15, color: colors.text }}>Asistente LepeUp</Text>
                 <Text style={{ fontFamily: fonts.plexRegular, fontSize: 11, color: colors.onDark.text38 }}>Conectado a la mesita</Text>
