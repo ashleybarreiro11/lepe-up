@@ -8,7 +8,6 @@ export function GradientMark({ size = 34, dotSize }: { size?: number; dotSize?: 
   return (
     <LinearGradient
       colors={gradients.mark}
-      locations={[0, 0.46, 0.54, 1]}
       start={{ x: 0.15, y: 0 }}
       end={{ x: 0.85, y: 1 }}
       style={{
@@ -26,8 +25,6 @@ export function GradientMark({ size = 34, dotSize }: { size?: number; dotSize?: 
             height: dot,
             borderRadius: dot / 2,
             backgroundColor: colors.screenBg,
-            borderWidth: Math.max(1, size * 0.035),
-            borderColor: 'rgba(255,255,255,0.22)',
           }}
         />
       )}
