@@ -19,14 +19,18 @@ export function GradientMark({ size = 34, dotSize }: { size?: number; dotSize?: 
         justifyContent: 'center',
       }}
     >
-      <View
-        style={{
-          width: dot,
-          height: dot,
-          borderRadius: dot / 2,
-          backgroundColor: colors.screenBg,
-        }}
-      />
+      {dot > 0 && (
+        <View
+          style={{
+            width: dot,
+            height: dot,
+            borderRadius: dot / 2,
+            backgroundColor: colors.screenBg,
+            borderWidth: Math.max(1, size * 0.035),
+            borderColor: 'rgba(255,255,255,0.22)',
+          }}
+        />
+      )}
     </LinearGradient>
   );
 }
