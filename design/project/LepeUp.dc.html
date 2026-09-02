@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#07070A;font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:#E8203A;text-decoration:none}a:hover{color:#FF4A5E}
+  @keyframes lpBreathe{0%,100%{opacity:.35;transform:scale(1)}50%{opacity:.7;transform:scale(1.04)}}
+  @keyframes lpRise{0%{opacity:.15}100%{opacity:.85}}
+  ::-webkit-scrollbar{width:0;height:0}
+</style>
+</helmet>
+
+<div style="padding:60px 64px 80px;display:flex;flex-direction:column;gap:44px">
+
+  <div style="display:flex;align-items:flex-end;gap:28px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:14px">
+      <div style="width:34px;height:34px;border-radius:11px;background:linear-gradient(150deg,#E8203A,#6D18C4);display:flex;align-items:center;justify-content:center">
+        <div style="width:11px;height:11px;border-radius:50%;background:#0B0B0E"></div>
+      </div>
+      <div style="font-family:'Sora',sans-serif;font-weight:600;font-size:26px;letter-spacing:-.5px;color:#F4F4F6">LepeUp</div>
+    </div>
+    <div style="font-size:13.5px;line-height:1.5;color:rgba(244,244,246,.42);max-width:520px">Despertador inteligente de mesita · app complementaria. Modo oscuro permanente, acento rojo profundo, asistente conversacional como eje central.</div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <div style="font-family:'Sora',sans-serif;font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,244,246,.4)">Onboarding</div>
+    <div style="display:flex;gap:56px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:baseline;gap:10px">
+          <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;font-weight:600;padding:3px 7px;border-radius:5px;background:rgba(109,24,196,.2);color:#C99BFF">O1</span>
+          <span style="font-family:'Sora',sans-serif;font-size:13px;font-weight:500;color:rgba(244,244,246,.72)">Bienvenida</span>
+        </div>
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ isDark }}" hint-size="402px,874px">
+          <div data-screen-label="Onboarding 1" style="box-sizing:border-box;overflow:hidden;height:100%;display:flex;flex-direction:column;justify-content:space-between;background:#0B0B0E;color:#F4F4F6;font-family:'IBM Plex Sans',system-ui,sans-serif;padding:64px 26px 44px;position:relative;overflow:hidden">
+            <div style="position:absolute;top:-160px;left:50%;transform:translateX(-50%);width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(232,32,58,.30),rgba(109,24,196,.10) 55%,transparent 72%);filter:blur(4px);animation:lpBreathe 9s ease-in-out infinite"></div>
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;padding-top:36px">
+              <div style="width:74px;height:74px;border-radius:24px;background:linear-gradient(150deg,#E8203A,#6D18C4);display:flex;align-items:center;justify-content:center">
+                <div style="width:22px;height:22px;border-radius:50%;background:#0B0B0E"></div>
+              </div>
+              <div style="font-family:'Sora',sans-serif;font-size:22px;font-weight:600;letter-spacing:-.4px">LepeUp</div>
+            </div>
+            <div style="position:relative;display:flex;flex-direction:column;gap:14px;padding-bottom:20px">
+              <div style="font-family:'Sora',sans-serif;font-size:32px;font-weight:300;line-height:1.18;letter-spacing:-1px;text-wrap:pretty">Despierta con luz,<br>no con sobresaltos.</div>
+              <div style="font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.5);text-wrap:pretty">Tu mesita simula el amanecer y el asistente ajusta todo por voz. Tres pasos y queda lista.</div>
+            </div>
+            <div style="position:relative;display:flex;flex-direction:column;gap:18px">
+              <button style="border:none;cursor:pointer;border-radius:17px;padding:16px 0;font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;font-weight:500;color:#fff;background:linear-gradient(145deg,#E8203A,#B0132A)" style-hover="filter:brightness(1.12)">Comenzar</button>
+              <div style="display:flex;align-items:center;justify-content:center;gap:7px">
+                <div style="width:22px;height:4px;border-radius:99px;background:#E8203A"></div>
+                <div style="width:4px;height:4px;border-radius:99px;background:rgba(255,255,255,.18)"></div>
+                <div style="width:4px;height:4px;border-radius:99px;background:rgba(255,255,255,.18)"></div>
+                <div style="width:4px;height:4px;border-radius:99px;background:rgba(255,255,255,.18)"></div>
+              </div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:baseline;gap:10px">
+          <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;font-weight:600;padding:3px 7px;border-radius:5px;background:rgba(109,24,196,.2);color:#C99BFF">O2</span>
+          <span style="font-family:'Sora',sans-serif;font-size:13px;font-weight:500;color:rgba(244,244,246,.72)">Emparejar la mesita</span>
+        </div>
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ isDark }}" hint-size="402px,874px">
+          <div data-screen-label="Onboarding 2" style="box-sizing:border-box;overflow:hidden;height:100%;display:flex;flex-direction:column;background:#0B0B0E;color:#F4F4F6;font-family:'IBM Plex Sans',system-ui,sans-serif;padding:64px 26px 44px">
+            <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.32);padding-bottom:10px">Paso 1 de 3</div>
+            <div style="font-family:'Sora',sans-serif;font-size:26px;font-weight:400;letter-spacing:-.7px;line-height:1.25">Acerca el teléfono<br>a la mesita</div>
+            <div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center;position:relative">
+              <div style="position:absolute;width:250px;height:250px;border-radius:50%;border:1px solid rgba(232,32,58,.16);animation:lpBreathe 6s ease-in-out infinite"></div>
+              <div style="position:absolute;width:170px;height:170px;border-radius:50%;border:1px solid rgba(232,32,58,.28);animation:lpBreathe 6s ease-in-out infinite .6s"></div>
+              <div style="width:96px;height:96px;border-radius:30px;background:linear-gradient(160deg,rgba(255,255,255,.10),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center">
+                <div style="width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FF6070,#8A0F20)"></div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <div style="font-size:13px;line-height:1.5;color:rgba(255,255,255,.45);text-wrap:pretty">La mesita también carga tu celular por inducción. Después podrás elegir cuánto tiempo mantiene la carga antes de cortarla: 2 h por defecto.</div>
+              <div style="border-radius:18px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.03);padding:15px 16px;display:flex;align-items:center;gap:12px">
+                <div style="width:8px;height:8px;border-radius:50%;background:#4ADE80;box-shadow:0 0 10px rgba(74,222,128,.7)"></div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:2px">
+                  <div style="font-size:14.5px">LepeUp-A17 encontrada</div>
+                  <div style="font-size:12px;color:rgba(255,255,255,.4)">Señal fuerte · a 40 cm</div>
+                </div>
+                <div style="font-size:12.5px;color:rgba(255,255,255,.35)">Bluetooth</div>
+              </div>
+              <button style="border:none;cursor:pointer;border-radius:17px;padding:16px 0;font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;font-weight:500;color:#fff;background:linear-gradient(145deg,#E8203A,#B0132A)" style-hover="filter:brightness(1.12)">Emparejar</button>
+              <div style="display:flex;align-items:center;justify-content:center;gap:7px">
+                <div style="width:4px;height:4px;border-radius:99px;background:rgba(255,255,255,.18)"></div>
+                <div style="width:22px;height:4px;border-radius:99px;background:#E8203A"></div>
+                <div style="width:4px;height:4px;border-radius:99px;background:rgba(255,255,255,.18)"></div>
+                <div style="width:4px;height:4px;border-radius:99px;background:rgba(255,255,255,.18)"></div>
+              </div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:baseline;gap:10px">
+          <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;font-weight:600;padding:3px 7px;border-radius:5px;background:rgba(109,24,196,.2);color:#C99BFF">O3</span>
+          <span style="font-family:'Sora',sans-serif;font-size:13px;font-weight:500;color:rgba(244,244,246,.72)">Conectar Google Calendar</span>
+        </div>
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ isDark }}" hint-size="402px,874px">
+          <div data-screen-label="Onboarding 3" style="box-sizing:border-box;overflow:hidden;height:100%;display:flex;flex-direction:column;background:#0B0B0E;color:#F4F4F6;font-family:'IBM Plex Sans',system-ui,sans-serif;padding:64px 26px 44px">
+            <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.32);padding-bottom:10px">Paso 2 de 3</div>
+            <div style="font-family:'Sora',sans-serif;font-size:26px;font-weight:400;letter-spacing:-.7px;line-height:1.25">Que tu agenda<br>ponga la alarma</div>
+            <div style="padding-top:12px;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.5);text-wrap:pretty">LepeUp lee solo la hora de inicio de tus eventos para sugerirte alarmas. Nada sale de tu cuenta.</div>
+            <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:10px">
+              <div style="border-radius:20px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.028);padding:16px 18px;display:flex;align-items:center;gap:13px">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3.5"></rect><path d="M3.5 10h17M8.5 3v3.5M15.5 3v3.5"></path></svg>
+                <div style="font-size:14px;color:rgba(255,255,255,.78)">Leer eventos y horarios</div>
+              </div>
+              <div style="border-radius:20px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.028);padding:16px 18px;display:flex;align-items:center;gap:13px">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5" stroke-linecap="round"><path d="M5 12.5 10 17.5 19 7.5"></path></svg>
+                <div style="font-size:14px;color:rgba(255,255,255,.78)">Sugerir alarmas, nunca crearlas solo</div>
+              </div>
+              <div style="border-radius:20px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.028);padding:16px 18px;display:flex;align-items:center;gap:13px">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5" stroke-linecap="round"><rect x="4.5" y="10.5" width="15" height="9.5" rx="3"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>
+                <div style="font-size:14px;color:rgba(255,255,255,.78)">Sin acceso a invitados ni contenido</div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <button style="border:none;cursor:pointer;border-radius:17px;padding:16px 0;font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;font-weight:500;color:#fff;background:linear-gradient(145deg,#E8203A,#B0132A);display:flex;align-items:center;justify-content:center;gap:10px" style-hover="filter:brightness(1.12)">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3.5"></rect><path d="M3.5 10h17M8.5 3v3.5M15.5 3v3.5"></path></svg>
+                Conectar Google Calendar
+              </button>
+              <button style="border:none;background:transparent;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:rgba(255,255,255,.45);padding:4px 0" style-hover="color:rgba(255,255,255,.75)">Ahora no</button>
+              <div style="display:flex;align-items:center;justify-content:center;gap:7px">
+                <div style="width:4px;height:4px;border-radius:99px;background:rgba(255,255,255,.18)"></div>
+                <div style="width:4px;height:4px;border-radius:99px;background:rgba(255,255,255,.18)"></div>
+                <div style="width:22px;height:4px;border-radius:99px;background:#E8203A"></div>
+                <div style="width:4px;height:4px;border-radius:99px;background:rgba(255,255,255,.18)"></div>
+              </div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:baseline;gap:10px">
+          <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;font-weight:600;padding:3px 7px;border-radius:5px;background:rgba(109,24,196,.2);color:#C99BFF">O4</span>
+          <span style="font-family:'Sora',sans-serif;font-size:13px;font-weight:500;color:rgba(244,244,246,.72)">Primera alarma</span>
+        </div>
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ isDark }}" hint-size="402px,874px">
+          <div data-screen-label="Onboarding 4" style="box-sizing:border-box;overflow:hidden;height:100%;display:flex;flex-direction:column;background:#0B0B0E;color:#F4F4F6;font-family:'IBM Plex Sans',system-ui,sans-serif;padding:64px 26px 44px">
+            <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.32);padding-bottom:10px">Paso 3 de 3</div>
+            <div style="font-family:'Sora',sans-serif;font-size:26px;font-weight:400;letter-spacing:-.7px;line-height:1.25">Tu primera<br>alarma</div>
+            <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:22px">
+              <div style="display:flex;align-items:flex-end;justify-content:center;gap:10px">
+                <div style="font-family:'Sora',sans-serif;font-size:66px;font-weight:300;letter-spacing:-3px;line-height:.9">06:40</div>
+                <div style="font-size:16px;color:rgba(255,255,255,.5);padding-bottom:9px">a.m.</div>
+              </div>
+              <div style="display:flex;justify-content:center;gap:8px">
+                <div style="width:34px;height:34px;border-radius:12px;border:1px solid rgba(232,32,58,.35);background:rgba(232,32,58,.14);display:flex;align-items:center;justify-content:center;font-size:12.5px;color:#FF8A96">L</div>
+                <div style="width:34px;height:34px;border-radius:12px;border:1px solid rgba(232,32,58,.35);background:rgba(232,32,58,.14);display:flex;align-items:center;justify-content:center;font-size:12.5px;color:#FF8A96">M</div>
+                <div style="width:34px;height:34px;border-radius:12px;border:1px solid rgba(232,32,58,.35);background:rgba(232,32,58,.14);display:flex;align-items:center;justify-content:center;font-size:12.5px;color:#FF8A96">M</div>
+                <div style="width:34px;height:34px;border-radius:12px;border:1px solid rgba(232,32,58,.35);background:rgba(232,32,58,.14);display:flex;align-items:center;justify-content:center;font-size:12.5px;color:#FF8A96">J</div>
+                <div style="width:34px;height:34px;border-radius:12px;border:1px solid rgba(232,32,58,.35);background:rgba(232,32,58,.14);display:flex;align-items:center;justify-content:center;font-size:12.5px;color:#FF8A96">V</div>
+                <div style="width:34px;height:34px;border-radius:12px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:12.5px;color:rgba(255,255,255,.35)">S</div>
+                <div style="width:34px;height:34px;border-radius:12px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:12.5px;color:rgba(255,255,255,.35)">D</div>
+              </div>
+              <div style="border-radius:20px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.028);padding:18px;display:flex;flex-direction:column;gap:14px">
+                <div style="display:flex;align-items:baseline;justify-content:space-between">
+                  <div style="font-size:14.5px;color:rgba(255,255,255,.82)">Subida de luz</div>
+                  <div style="font-family:'Sora',sans-serif;font-size:18px;color:#FF6070">45 s</div>
+                </div>
+                <div style="position:relative;height:6px;border-radius:999px;background:rgba(255,255,255,.09)">
+                  <div style="position:absolute;inset:0 auto 0 0;width:22%;border-radius:999px;background:linear-gradient(90deg,#6D18C4,#E8203A)"></div>
+                  <div style="position:absolute;top:50%;left:22%;transform:translate(-50%,-50%);width:20px;height:20px;border-radius:50%;background:#F4F4F6"></div>
+                </div>
+                <div style="font-size:12.5px;color:rgba(255,255,255,.4);line-height:1.45;text-wrap:pretty">La luz se enciende en cuanto suena la alarma y sube despacio hasta el 100 % en 45 s.</div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:18px">
+              <button style="border:none;cursor:pointer;border-radius:17px;padding:16px 0;font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;font-weight:500;color:#fff;background:linear-gradient(145deg,#E8203A,#B0132A)" style-hover="filter:brightness(1.12)">Listo</button>
+              <div style="display:flex;align-items:center;justify-content:center;gap:7px">
+                <div style="width:4px;height:4px;border-radius:99px;background:rgba(255,255,255,.18)"></div>
+                <div style="width:4px;height:4px;border-radius:99px;background:rgba(255,255,255,.18)"></div>
+                <div style="width:4px;height:4px;border-radius:99px;background:rgba(255,255,255,.18)"></div>
+                <div style="width:22px;height:4px;border-radius:99px;background:#E8203A"></div>
+              </div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="font-family:'Sora',sans-serif;font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,244,246,.4);padding-top:8px">App</div>
+  <div style="display:flex;gap:56px;flex-wrap:wrap;align-items:flex-start">
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;align-items:baseline;gap:10px">
+        <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;font-weight:600;padding:3px 7px;border-radius:5px;background:rgba(232,32,58,.16);color:#FF6070">01</span>
+        <span style="font-family:'Sora',sans-serif;font-size:13px;font-weight:500;color:rgba(244,244,246,.72)">Dashboard</span>
+      </div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ isDark }}" hint-size="402px,874px">
+        <div data-screen-label="Dashboard" style="height:100%;display:flex;flex-direction:column;background:#0B0B0E;color:#F4F4F6;font-family:'IBM Plex Sans',system-ui,sans-serif">
+
+          <div style="flex:1;min-height:0;overflow:auto;padding:64px 22px 12px;display:flex;flex-direction:column;gap:22px">
+
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div style="display:flex;flex-direction:column;gap:3px">
+                <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,244,246,.34)">Buenas noches</div>
+                <div style="font-family:'Sora',sans-serif;font-size:20px;font-weight:500;letter-spacing:-.3px">Lepe</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:9px">
+              <div style="display:flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.03);border-radius:999px;padding:8px 12px">
+                <div style="position:relative;width:22px;height:11px;border-radius:3px;border:1px solid rgba(255,255,255,.32)">
+                  <div style="position:absolute;top:1.5px;left:1.5px;bottom:1.5px;width:{{ deviceBatteryFill }};border-radius:2px;background:#4ADE80"></div>
+                  <div style="position:absolute;top:3px;right:-3px;width:2px;height:5px;border-radius:0 2px 2px 0;background:rgba(255,255,255,.32)"></div>
+                </div>
+                <span style="font-size:12.5px;color:rgba(255,255,255,.7)">Mesita {{ deviceBattery }}</span>
+              </div>
+              <div style="width:38px;height:38px;border-radius:13px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.03);display:flex;align-items:center;justify-content:center">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(244,244,246,.6)" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"></path></svg>
+              </div>
+              </div>
+            </div>
+
+            <div style="position:relative;border-radius:26px;padding:26px 24px 24px;background:linear-gradient(165deg,rgba(232,32,58,.14),rgba(109,24,196,.10) 60%,rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);overflow:hidden">
+              <div style="position:absolute;top:-70px;right:-50px;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,rgba(232,32,58,.45),transparent 68%);filter:blur(6px);animation:lpBreathe 7s ease-in-out infinite"></div>
+              <div style="position:relative;display:flex;flex-direction:column;gap:16px">
+                <div style="display:flex;align-items:center;gap:8px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5)">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF6070" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="13" r="8"></circle><path d="M12 10v3.5l2.2 1.6M5 4.5 7.2 6.6M19 4.5 16.8 6.6"></path></svg>
+                  Próxima alarma
+                </div>
+                <div style="display:flex;align-items:flex-end;gap:12px">
+                  <div style="font-family:'Sora',sans-serif;font-size:60px;font-weight:300;letter-spacing:-2.5px;line-height:.9">{{ alarmTime }}</div>
+                  <div style="font-size:15px;font-weight:500;color:rgba(255,255,255,.55);padding-bottom:8px">{{ alarmMeridiem }}</div>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between">
+                  <div style="font-size:13.5px;color:rgba(255,255,255,.62)">{{ alarmDay }} · faltan {{ alarmIn }}</div>
+                  <div style="display:flex;align-items:center;gap:7px;font-size:12.5px;color:#FF8A96;border:1px solid rgba(232,32,58,.3);background:rgba(232,32,58,.10);border-radius:999px;padding:5px 11px">Activa</div>
+                </div>
+              </div>
+            </div>
+
+            <sc-if value="{{ suggestionOpen }}" hint-placeholder-val="{{ true }}">
+              <div style="border-radius:22px;border:1px solid rgba(109,24,196,.34);background:linear-gradient(150deg,rgba(109,24,196,.20),rgba(11,11,14,.2));padding:18px 18px 16px;display:flex;flex-direction:column;gap:14px">
+                <div style="display:flex;gap:12px">
+                  <div style="width:30px;height:30px;flex:none;border-radius:10px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C99BFF" stroke-width="1.6" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3.5"></rect><path d="M3.5 10h17M8.5 3v3.5M15.5 3v3.5"></path></svg>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:5px">
+                    <div style="display:flex;align-items:center;gap:8px">
+                      <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(201,155,255,.8)">Sugerencia del calendario</div>
+                      <div style="display:flex;align-items:center;gap:5px;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:2px 7px">
+                        <div style="width:5px;height:5px;border-radius:50%;background:#4ADE80;box-shadow:0 0 7px rgba(74,222,128,.8)"></div>
+                        <span style="font-size:10px;color:rgba(255,255,255,.55)">Google Calendar</span>
+                      </div>
+                    </div>
+                    <div style="font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.88);text-wrap:pretty">Detectamos un vuelo el jueves a las 5:00 a.m., ¿quieres programar una alarma para esa hora?</div>
+                  </div>
+                </div>
+                <div style="display:flex;gap:10px">
+                  <button onClick="{{ acceptSuggestion }}" style="flex:1;border:none;cursor:pointer;border-radius:13px;padding:11px 0;font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-weight:500;color:#fff;background:linear-gradient(145deg,#E8203A,#B0132A)" style-hover="filter:brightness(1.12)">Programar</button>
+                  <button onClick="{{ dismissSuggestion }}" style="flex:1;border:1px solid rgba(255,255,255,.12);cursor:pointer;border-radius:13px;padding:11px 0;font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-weight:400;color:rgba(255,255,255,.62);background:transparent" style-hover="background:rgba(255,255,255,.05)">Descartar</button>
+                </div>
+              </div>
+            </sc-if>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div style="border-radius:20px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.028);padding:16px 16px 15px;display:flex;flex-direction:column;gap:12px;min-height:104px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.42)" stroke-width="1.5" stroke-linecap="round"><path d="M12 4v2M12 18v2M4 12h2M18 12h2M6.5 6.5 8 8M17.5 6.5 16 8"></path><circle cx="12" cy="12" r="3.6"></circle></svg>
+                <div style="display:flex;flex-direction:column;gap:3px">
+                  <div style="font-family:'Sora',sans-serif;font-size:24px;font-weight:400;letter-spacing:-.6px">{{ riseLabel }}</div>
+                  <div style="font-size:12.5px;color:rgba(255,255,255,.4)">Subida de luz</div>
+                </div>
+              </div>
+              <div style="border-radius:20px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.028);padding:16px 16px 15px;display:flex;flex-direction:column;gap:12px;min-height:104px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.42)" stroke-width="1.5" stroke-linecap="round"><rect x="2.5" y="7.5" width="16" height="9" rx="3"></rect><path d="M21.5 11v2"></path><path d="M9.5 9.5 7 12.8h2.6l-.6 2.4 2.8-3.5H9.2z" fill="rgba(255,255,255,.42)" stroke="none"></path></svg>
+                <div style="display:flex;flex-direction:column;gap:3px">
+                  <div style="font-family:'Sora',sans-serif;font-size:24px;font-weight:400;letter-spacing:-.6px">{{ chargeLabel }}</div>
+                  <div style="font-size:12.5px;color:rgba(255,255,255,.4)">Carga del celular</div>
+                </div>
+              </div>
+              <div style="grid-column:span 2;border-radius:20px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.028);padding:16px 18px;display:flex;align-items:center;justify-content:space-between">
+                <div style="display:flex;align-items:center;gap:13px">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.42)" stroke-width="1.5" stroke-linecap="round"><path d="M4 14v-3.5A8 8 0 0 1 20 10.5V14"></path><path d="M4 14a2.5 2.5 0 0 0 2.5 2.5V11.5A2.5 2.5 0 0 0 4 14zM20 14a2.5 2.5 0 0 1-2.5 2.5V11.5A2.5 2.5 0 0 1 20 14z"></path></svg>
+                  <div style="display:flex;flex-direction:column;gap:2px">
+                    <div style="font-family:'Sora',sans-serif;font-size:16px;font-weight:400">{{ tone }}</div>
+                    <div style="font-size:12.5px;color:rgba(255,255,255,.4)">Tono actual{{ rotationNote }}</div>
+                  </div>
+                </div>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.6" stroke-linecap="round"><path d="M9.5 5.5 16 12l-6.5 6.5"></path></svg>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="flex:none;padding:10px 18px 40px;background:linear-gradient(to top,#0B0B0E 55%,rgba(11,11,14,0))">
+            <div style="border-radius:20px;border:1px solid rgba(232,32,58,.28);background:linear-gradient(140deg,rgba(232,32,58,.13),rgba(109,24,196,.10));padding:13px 14px;display:flex;align-items:center;gap:12px">
+              <div style="width:32px;height:32px;flex:none;border-radius:11px;background:linear-gradient(150deg,#E8203A,#6D18C4);display:flex;align-items:center;justify-content:center">
+                <div style="width:9px;height:9px;border-radius:50%;background:rgba(11,11,14,.85);animation:lpBreathe 4s ease-in-out infinite"></div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:1px">
+                <div style="font-size:14.5px;color:rgba(255,255,255,.9)">Habla con LepeUp</div>
+                <div style="font-size:11.5px;color:rgba(255,255,255,.42)">Ajusta alarmas, luz y sonidos</div>
+              </div>
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.6" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"></path></svg>
+            </div>
+          </div>
+
+        </div>
+      </x-import>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;align-items:baseline;gap:10px">
+        <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;font-weight:600;padding:3px 7px;border-radius:5px;background:rgba(232,32,58,.16);color:#FF6070">02</span>
+        <span style="font-family:'Sora',sans-serif;font-size:13px;font-weight:500;color:rgba(244,244,246,.72)">Asistente · chips listos para tocar</span>
+      </div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ isDark }}" hint-size="402px,874px">
+        <div data-screen-label="Chat" style="height:100%;display:flex;flex-direction:column;background:#0B0B0E;color:#F4F4F6;font-family:'IBM Plex Sans',system-ui,sans-serif">
+
+          <div style="flex:none;padding:60px 22px 14px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,.06)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.7" stroke-linecap="round"><path d="M14.5 5.5 8 12l6.5 6.5"></path></svg>
+            <div style="display:flex;align-items:center;gap:10px">
+              <div style="width:26px;height:26px;border-radius:9px;background:linear-gradient(150deg,#E8203A,#6D18C4)"></div>
+              <div style="display:flex;flex-direction:column">
+                <div style="font-family:'Sora',sans-serif;font-size:15px;font-weight:500">Asistente LepeUp</div>
+                <div style="font-size:11px;color:rgba(255,255,255,.38)">Conectado a la mesita</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="flex:1;min-height:0;overflow:auto;padding:20px 22px 8px;display:flex;flex-direction:column;justify-content:flex-end;gap:12px">
+            <sc-for list="{{ messages }}" as="m" hint-placeholder-count="3">
+              <div style="display:flex;justify-content:{{ m.justify }}">
+                <div style="max-width:78%;border-radius:{{ m.radius }};padding:12px 15px;font-size:14.5px;line-height:1.5;background:{{ m.bg }};border:1px solid {{ m.border }};color:{{ m.color }};text-wrap:pretty">{{ m.text }}</div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="flex:none;padding:6px 22px 0">
+            <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);padding-bottom:10px">Sugerencias</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <sc-for list="{{ chips }}" as="c" hint-placeholder-count="4">
+                <button onClick="{{ c.onClick }}" style="border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.035);color:rgba(255,255,255,.82);border-radius:999px;padding:9px 14px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:7px" style-hover="border-color:rgba(232,32,58,.45);background:rgba(232,32,58,.12);color:#fff">{{ c.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="flex:none;padding:16px 18px 40px">
+            <div style="display:flex;align-items:center;gap:10px;border-radius:20px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);padding:11px 12px 11px 16px">
+              <input value="{{ draft }}" onChange="{{ onDraft }}" onKeyDown="{{ onDraftKey }}" placeholder="Escribe o mantén el micrófono…" style="flex:1;border:none;outline:none;background:transparent;color:#F4F4F6;font-family:'IBM Plex Sans',sans-serif;font-size:14.5px" />
+              <button onClick="{{ toggleMic }}" style="width:36px;height:36px;flex:none;border-radius:13px;border:1px solid {{ micBorder }};background:{{ micBg }};display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="filter:brightness(1.15)">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="{{ micStroke }}" stroke-width="1.6" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"></path></svg>
+              </button>
+              <button onClick="{{ send }}" style="width:36px;height:36px;flex:none;border-radius:13px;border:none;background:linear-gradient(145deg,#E8203A,#B0132A);display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="filter:brightness(1.15)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h13M12.5 6 18.5 12l-6 6"></path></svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </x-import>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;align-items:baseline;gap:10px">
+        <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;font-weight:600;padding:3px 7px;border-radius:5px;background:rgba(232,32,58,.16);color:#FF6070">03</span>
+        <span style="font-family:'Sora',sans-serif;font-size:13px;font-weight:500;color:rgba(244,244,246,.72)">Configuración · arrastra los sliders</span>
+      </div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ isDark }}" hint-size="402px,874px">
+        <div data-screen-label="Configuracion" style="height:100%;display:flex;flex-direction:column;background:#0B0B0E;color:#F4F4F6;font-family:'IBM Plex Sans',system-ui,sans-serif">
+
+          <div style="flex:none;padding:60px 22px 16px;display:flex;align-items:center;gap:12px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.7" stroke-linecap="round"><path d="M14.5 5.5 8 12l6.5 6.5"></path></svg>
+            <div style="font-family:'Sora',sans-serif;font-size:19px;font-weight:500;letter-spacing:-.3px">Configuración</div>
+          </div>
+
+          <div style="flex:1;min-height:0;overflow:auto;padding:6px 22px 40px;display:flex;flex-direction:column;gap:14px">
+
+            <div style="border-radius:22px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.028);padding:20px 18px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between;padding-bottom:16px">
+                <div style="display:flex;flex-direction:column;gap:4px">
+                  <div style="font-size:15px;color:rgba(255,255,255,.88)">Subida de luz</div>
+                  <div style="font-size:12.5px;color:rgba(255,255,255,.4)">La luz sube desde que suena la alarma</div>
+                </div>
+                <div style="flex:none;white-space:nowrap;font-family:'Sora',sans-serif;font-size:22px;font-weight:400;color:#FF6070">{{ riseLabel }}</div>
+              </div>
+              <div onPointerDown="{{ riseDown }}" style="padding:10px 0;cursor:pointer;touch-action:none">
+                <div style="position:relative;height:6px;border-radius:999px;background:rgba(255,255,255,.09)">
+                  <div style="position:absolute;inset:0 auto 0 0;width:{{ risePct }};border-radius:999px;background:linear-gradient(90deg,#6D18C4,#E8203A)"></div>
+                  <div style="position:absolute;top:50%;left:{{ risePct }};transform:translate(-50%,-50%);width:22px;height:22px;border-radius:50%;background:#F4F4F6;box-shadow:0 2px 10px rgba(232,32,58,.5)"></div>
+                </div>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:11.5px;color:rgba(255,255,255,.3);padding-top:4px">
+                <span>10 s</span><span>300 s</span>
+              </div>
+            </div>
+
+            <div style="border-radius:22px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.028);padding:20px 18px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between;padding-bottom:16px">
+                <div style="display:flex;flex-direction:column;gap:4px">
+                  <div style="font-size:15px;color:rgba(255,255,255,.88)">Tiempo de carga</div>
+                  <div style="font-size:12.5px;line-height:1.45;color:rgba(255,255,255,.4);text-wrap:pretty">Cuánto tiempo mantiene la mesita la carga inductiva de tu celular antes de cortarla</div>
+                </div>
+                <div style="flex:none;white-space:nowrap;font-family:'Sora',sans-serif;font-size:22px;font-weight:400;color:#FF6070">{{ chargeLabel }}</div>
+              </div>
+              <div onPointerDown="{{ chargeDown }}" style="padding:10px 0;cursor:pointer;touch-action:none">
+                <div style="position:relative;height:6px;border-radius:999px;background:rgba(255,255,255,.09)">
+                  <div style="position:absolute;inset:0 auto 0 0;width:{{ chargePct }};border-radius:999px;background:linear-gradient(90deg,#6D18C4,#E8203A)"></div>
+                  <div style="position:absolute;top:50%;left:{{ chargePct }};transform:translate(-50%,-50%);width:22px;height:22px;border-radius:50%;background:#F4F4F6;box-shadow:0 2px 10px rgba(232,32,58,.5)"></div>
+                </div>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:11.5px;color:rgba(255,255,255,.3);padding-top:4px">
+                <span>30 min</span><span>6 h</span>
+              </div>
+            </div>
+
+            <div style="border-radius:22px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.028);padding:18px;display:flex;flex-direction:column;gap:16px">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+                <div style="display:flex;flex-direction:column;gap:4px">
+                  <div style="font-size:15px;color:rgba(255,255,255,.88)">Rotación automática del tono</div>
+                  <div style="font-size:12.5px;line-height:1.45;color:rgba(255,255,255,.4);text-wrap:pretty">Cambia el tono para evitar la habituación</div>
+                </div>
+                <div onClick="{{ toggleRotation }}" style="flex:none;width:52px;height:31px;border-radius:999px;cursor:pointer;position:relative;background:{{ rotationTrack }};border:1px solid {{ rotationBorder }};transition:background .2s ease">
+                  <div style="position:absolute;top:3px;left:{{ rotationKnob }};width:23px;height:23px;border-radius:50%;background:#fff;transition:left .2s cubic-bezier(.4,0,.2,1)"></div>
+                </div>
+              </div>
+              <sc-if value="{{ rotation }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;flex-direction:column;gap:9px;border-top:1px solid rgba(255,255,255,.06);padding-top:15px">
+                  <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3)">Frecuencia</div>
+                  <div style="display:flex;gap:7px">
+                    <sc-for list="{{ freqs }}" as="f" hint-placeholder-count="4">
+                      <button onClick="{{ f.onClick }}" style="flex:1;cursor:pointer;white-space:nowrap;border-radius:12px;padding:10px 4px;font-family:'IBM Plex Sans',sans-serif;font-size:12px;background:{{ f.bg }};border:1px solid {{ f.border }};color:{{ f.color }}" style-hover="border-color:rgba(232,32,58,.4)">{{ f.label }}</button>
+                    </sc-for>
+                  </div>
+                  <div style="font-size:12px;color:rgba(255,255,255,.36)">Próximo cambio: {{ nextRotation }}</div>
+                </div>
+              </sc-if>
+            </div>
+
+            <div style="border-radius:22px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.028);padding:18px;display:flex;align-items:center;gap:13px">
+              <div style="width:34px;height:34px;flex:none;border-radius:12px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.5" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3.5"></rect><path d="M3.5 10h17M8.5 3v3.5M15.5 3v3.5"></path></svg>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:3px">
+                <div style="font-size:14.5px;color:rgba(255,255,255,.88)">Google Calendar</div>
+                <div style="font-size:12px;color:rgba(255,255,255,.4)">lepe@gmail.com</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:7px;border:1px solid rgba(74,222,128,.28);background:rgba(74,222,128,.10);border-radius:999px;padding:5px 10px">
+                <div style="width:6px;height:6px;border-radius:50%;background:#4ADE80;box-shadow:0 0 8px rgba(74,222,128,.8)"></div>
+                <span style="font-size:11.5px;color:#8FE7AC">Conectado</span>
+              </div>
+            </div>
+
+            <div style="padding:12px 4px 2px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.28)">Tono de alarma</div>
+            <div style="flex:none;border-radius:22px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.028);overflow:hidden">
+              <sc-for list="{{ tones }}" as="t" hint-placeholder-count="4">
+                <div onClick="{{ t.onClick }}" style="padding:15px 18px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;border-top:1px solid rgba(255,255,255,.05)" style-hover="background:rgba(255,255,255,.03)">
+                  <div style="display:flex;flex-direction:column;gap:3px">
+                    <div style="font-size:14.5px;color:{{ t.color }}">{{ t.name }}</div>
+                    <div style="font-size:12px;color:rgba(255,255,255,.36)">{{ t.desc }}</div>
+                  </div>
+                  <div style="width:18px;height:18px;border-radius:50%;border:1px solid {{ t.dotBorder }};background:{{ t.dotBg }}"></div>
+                </div>
+              </sc-for>
+            </div>
+
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#E8203A&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#E8203A&quot;,&quot;#6D18C4&quot;,&quot;#C2185B&quot;,&quot;#B0132A&quot;],&quot;section&quot;:&quot;Marca&quot;}}">
+class Component extends DCLogic {
+  state = {
+    rise: 45,
+    charge: 120,
+    tone: 'Nebulosa',
+    rotation: true,
+    freq: 'semana',
+    suggestionOpen: true,
+    alarm: { time: '06:40', mer: 'a.m.', day: 'Mañana, miércoles', in: '8 h 12 min' },
+    mic: false,
+    draft: '',
+    messages: [
+      { who: 'bot', text: 'Buenas noches. La mesita está cargada y la alarma de mañana sigue en pie. ¿Qué ajustamos?' },
+    ],
+  };
+
+  TONES = [
+    { name: 'Nebulosa', desc: 'Pulso lento, graves suaves' },
+    { name: 'Vibranium', desc: 'Percusión metálica contenida' },
+    { name: 'Ruido blanco', desc: 'Estático cálido, sin picos' },
+    { name: 'Cuerdas al alba', desc: 'Ascenso orquestal de 40 s' },
+    { name: 'Personalizado', desc: 'Creado por el asistente · Ambiental estilo Wakanda' },
+  ];
+
+  FREQS = [
+    { key: 'dia', label: 'Cada día', next: 'mañana a las 06:40' },
+    { key: 'semana', label: 'Cada semana', next: 'lunes 8 de septiembre' },
+    { key: 'quincena', label: 'Cada 15 días', next: 'lunes 15 de septiembre' },
+    { key: 'mes', label: 'Cada mes', next: '1 de octubre' },
+  ];
+
+  CHIPS = [
+    'Ambiental estilo Wakanda',
+    'Ruido blanco suave inspirado en anime',
+    'Cambiar horario de alarma',
+    'Tono inspirado en los Simpson',
+    'Revisar mi calendario',
+  ];
+
+  REPLIES = {
+    'Ambiental estilo Wakanda': 'Listo: percusión profunda y coro bajo, volumen máximo al 40 %. Lo dejo como tono ambiental de la subida de luz.',
+    'Ruido blanco suave inspirado en anime': 'Puse un lecho de ruido blanco con lluvia lejana. Se apagará solo 45 minutos después de que te duermas.',
+    'Cambiar horario de alarma': '¿Para qué hora la muevo? Puedes decirme algo como “mañana a las 5:15”.',
+    'Tono inspirado en los Simpson': 'Armé una versión suave del tema de los Simpson: solo vientos y xilófono, sin metales. Queda guardado como tono Personalizado.',
+    'Revisar mi calendario': 'Tienes un vuelo el jueves a las 5:00 a.m. y una reunión el viernes a las 9:00. ¿Programo alarmas para ambos?',
+  };
+
+  clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+  drag(e, min, max, step, key) {
+    const track = e.currentTarget;
+    const apply = (clientX) => {
+      const r = track.getBoundingClientRect();
+      const t = this.clamp((clientX - r.left) / r.width, 0, 1);
+      const raw = min + t * (max - min);
+      this.setState({ [key]: Math.round(raw / step) * step });
+    };
+    apply(e.clientX);
+    const move = (ev) => apply(ev.clientX);
+    const up = () => { window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+  }
+
+  say(text) {
+    const reply = this.REPLIES[text] || 'Entendido. Lo aplico en la mesita ahora mismo.';
+    this.setState(s => ({
+      draft: '',
+      messages: [...s.messages, { who: 'me', text }, { who: 'bot', text: reply }],
+    }));
+  }
+
+  renderVals() {
+    const s = this.state;
+    const a = this.props.accent ?? '#E8203A';
+    const riseMin = 10, riseMax = 300, chMin = 30, chMax = 360;
+    const h = Math.floor(s.charge / 60), m = s.charge % 60;
+
+    return {
+      isDark: true,
+      alarmTime: s.alarm.time,
+      alarmMeridiem: s.alarm.mer,
+      alarmDay: s.alarm.day,
+      alarmIn: s.alarm.in,
+      riseLabel: s.rise + ' s',
+      chargeLabel: m === 0 ? h + ' h' : (h > 0 ? h + ' h ' + m : m + ' min'),
+      tone: s.tone,
+      rotationNote: s.rotation ? ' · rota ' + ((this.FREQS.find(f => f.key === s.freq) || this.FREQS[0]).label.toLowerCase()) : '',
+      suggestionOpen: s.suggestionOpen,
+      deviceBattery: '82 %',
+      deviceBatteryFill: '78%',
+      risePct: ((s.rise - riseMin) / (riseMax - riseMin) * 100) + '%',
+      chargePct: ((s.charge - chMin) / (chMax - chMin) * 100) + '%',
+      riseDown: (e) => this.drag(e, riseMin, riseMax, 5, 'rise'),
+      chargeDown: (e) => this.drag(e, chMin, chMax, 15, 'charge'),
+      rotationTrack: s.rotation ? a : 'rgba(255,255,255,.08)',
+      rotationBorder: s.rotation ? a : 'rgba(255,255,255,.14)',
+      rotationKnob: s.rotation ? '26px' : '3px',
+      rotation: s.rotation,
+      toggleRotation: () => this.setState(p => ({ rotation: !p.rotation })),
+      freqs: this.FREQS.map(f => ({
+        label: f.label,
+        bg: f.key === s.freq ? 'rgba(232,32,58,.14)' : 'rgba(255,255,255,.03)',
+        border: f.key === s.freq ? 'rgba(232,32,58,.45)' : 'rgba(255,255,255,.09)',
+        color: f.key === s.freq ? '#FF8A96' : 'rgba(255,255,255,.6)',
+        onClick: () => this.setState({ freq: f.key }),
+      })),
+      nextRotation: (this.FREQS.find(f => f.key === s.freq) || this.FREQS[0]).next,
+      tones: this.TONES.map(t => ({
+        name: t.name, desc: t.desc,
+        color: t.name === s.tone ? '#fff' : 'rgba(255,255,255,.72)',
+        dotBorder: t.name === s.tone ? a : 'rgba(255,255,255,.2)',
+        dotBg: t.name === s.tone ? a : 'transparent',
+        onClick: () => this.setState({ tone: t.name }),
+      })),
+      acceptSuggestion: () => this.setState({
+        suggestionOpen: false,
+        alarm: { time: '05:00', mer: 'a.m.', day: 'Jueves · vuelo', in: '2 d 6 h' },
+      }),
+      dismissSuggestion: () => this.setState({ suggestionOpen: false }),
+      messages: s.messages.map(mm => ({
+        text: mm.text,
+        justify: mm.who === 'me' ? 'flex-end' : 'flex-start',
+        radius: mm.who === 'me' ? '18px 18px 6px 18px' : '18px 18px 18px 6px',
+        bg: mm.who === 'me' ? 'rgba(232,32,58,.16)' : 'rgba(255,255,255,.04)',
+        border: mm.who === 'me' ? 'rgba(232,32,58,.3)' : 'rgba(255,255,255,.07)',
+        color: mm.who === 'me' ? '#fff' : 'rgba(255,255,255,.82)',
+      })),
+      chips: this.CHIPS.map(c => ({ label: c, onClick: () => this.say(c) })),
+      draft: s.draft,
+      onDraft: (e) => this.setState({ draft: e.target.value }),
+      onDraftKey: (e) => { if (e.key === 'Enter' && this.state.draft.trim()) this.say(this.state.draft.trim()); },
+      send: () => { if (s.draft.trim()) this.say(s.draft.trim()); },
+      toggleMic: () => this.setState(p => ({ mic: !p.mic })),
+      micBg: s.mic ? 'rgba(232,32,58,.22)' : 'rgba(255,255,255,.05)',
+      micBorder: s.mic ? 'rgba(232,32,58,.5)' : 'rgba(255,255,255,.12)',
+      micStroke: s.mic ? '#FF6070' : 'rgba(255,255,255,.7)',
+    };
+  }
+}
+
+</script>
+</body>
+</html>
