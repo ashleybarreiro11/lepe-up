@@ -211,12 +211,12 @@ export default function Dashboard() {
                 gap: 8,
                 borderRadius: 13,
                 borderWidth: 1,
-                borderColor: 'rgba(232,32,58,0.35)',
-                backgroundColor: 'rgba(232,32,58,0.10)',
+                borderColor: 'rgba(109,24,196,0.4)',
+                backgroundColor: 'rgba(109,24,196,0.14)',
                 paddingVertical: 11,
               }}
             >
-              <Text style={{ fontFamily: fonts.plexMedium, fontSize: 13.5, color: colors.redSofter }}>Pídeselo a LepeUp</Text>
+              <Text style={{ fontFamily: fonts.plexMedium, fontSize: 13.5, color: colors.purpleLight }}>Pídeselo a LepeUp</Text>
             </Pressable>
           </View>
 

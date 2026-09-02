@@ -11,6 +11,7 @@ export const colors = {
   redSofter: '#FF8A96',
   redDeep: '#B0132A',
   purple: '#6D18C4',
+  purpleDeep: '#4C0F91',
   purpleLight: '#C99BFF',
   green: '#4ADE80',
   greenSoft: '#8FE7AC',
@@ -49,7 +50,7 @@ export const colors = {
 
 export const gradients = {
   mark: ['#E8203A', '#6D18C4'] as const,
-  button: ['#E8203A', '#B0132A'] as const,
+  button: ['#6D18C4', '#4C0F91'] as const,
   slider: ['#6D18C4', '#E8203A'] as const,
   banner: ['rgba(109,24,196,0.20)', 'rgba(11,11,14,0.2)'] as const,
   heroCard: ['rgba(232,32,58,0.14)', 'rgba(109,24,196,0.10)', 'rgba(255,255,255,0.02)'] as const,
