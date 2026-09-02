@@ -77,7 +77,7 @@ function StatCard({ icon, value, label }: { icon: React.ReactNode; value: string
 
 export default function Dashboard() {
   const router = useRouter();
-  const { state, riseLabel, chargeLabel, rotationNote, acceptSuggestion, dismissSuggestion } = useApp();
+  const { state, riseLabel, chargeStartLabel, rotationNote, acceptSuggestion, dismissSuggestion } = useApp();
 
   return (
     <Screen>
@@ -296,7 +296,7 @@ export default function Dashboard() {
 
           <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12 }}>
             <StatCard icon={<IconSparkle />} value={riseLabel} label="Subida de luz" />
-            <StatCard icon={<IconBatteryBolt />} value={chargeLabel} label="Carga del celular" />
+            <StatCard icon={<IconBatteryBolt />} value={chargeStartLabel} label="Inicio de carga" />
             <Pressable
               onPress={() => router.push('/settings')}
               style={{

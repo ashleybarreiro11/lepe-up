@@ -5,6 +5,7 @@ export type FreqKey = 'dia' | 'semana' | 'quincena' | 'mes';
 export type FreqDef = { key: FreqKey; label: string; next: string };
 export type ChatMessage = { who: 'bot' | 'me'; text: string };
 export type AlarmInfo = { time: string; mer: string; day: string; in: string };
+export type TimeOfDay = { time: string; mer: string };
 
 export const TONES: ToneDef[] = [
   { name: 'Nebulosa', desc: 'Pulso lento, graves suaves' },
@@ -59,6 +60,7 @@ type AppState = {
   freq: FreqKey;
   suggestionOpen: boolean;
   alarm: AlarmInfo;
+  chargeStart: TimeOfDay;
   activeDays: boolean[];
   mic: boolean;
   draft: string;
@@ -70,6 +72,7 @@ type AppContextValue = {
   state: AppState;
   riseLabel: string;
   chargeLabel: string;
+  chargeStartLabel: string;
   rotationNote: string;
   risePct: number;
   chargePct: number;
@@ -88,6 +91,9 @@ type AppContextValue = {
   adjustAlarmHour: () => void;
   adjustAlarmMinute: () => void;
   toggleAlarmMeridiem: () => void;
+  adjustChargeStartHour: () => void;
+  adjustChargeStartMinute: () => void;
+  toggleChargeStartMeridiem: () => void;
 };
 
 const AppContext = createContext<AppContextValue | null>(null);
@@ -103,6 +109,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     freq: 'semana',
     suggestionOpen: true,
     alarm: { time: '06:40', mer: 'a.m.', day: 'Mañana, miércoles', in: '8 h 12 min' },
+    chargeStart: { time: '02:00', mer: 'a.m.' },
     activeDays: [true, true, true, true, true, false, false],
     mic: false,
     draft: '',
@@ -165,6 +172,32 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     () => setState((s) => ({ ...s, alarm: { ...s.alarm, mer: s.alarm.mer === 'a.m.' ? 'p.m.' : 'a.m.' } })),
     []
   );
+  const adjustChargeStartHour = useCallback(
+    () =>
+      setState((s) => {
+        const [h, m] = s.chargeStart.time.split(':').map(Number);
+        const nextH = h >= 12 ? 1 : h + 1;
+        return { ...s, chargeStart: { ...s.chargeStart, time: `${pad(nextH)}:${pad(m)}` } };
+      }),
+    []
+  );
+  const adjustChargeStartMinute = useCallback(
+    () =>
+      setState((s) => {
+        const [h, m] = s.chargeStart.time.split(':').map(Number);
+        const nextM = m >= 55 ? 0 : m + 5;
+        return { ...s, chargeStart: { ...s.chargeStart, time: `${pad(h)}:${pad(nextM)}` } };
+      }),
+    []
+  );
+  const toggleChargeStartMeridiem = useCallback(
+    () =>
+      setState((s) => ({
+        ...s,
+        chargeStart: { ...s.chargeStart, mer: s.chargeStart.mer === 'a.m.' ? 'p.m.' : 'a.m.' },
+      })),
+    []
+  );
   const toggleMic = useCallback(() => setState((s) => ({ ...s, mic: !s.mic })), []);
   const setDraft = useCallback((text: string) => setState((s) => ({ ...s, draft: text })), []);
   const send = useCallback((text?: string) => {
@@ -184,6 +217,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const h = Math.floor(state.charge / 60);
   const m = state.charge % 60;
   const chargeLabel = m === 0 ? `${h} h` : h > 0 ? `${h} h ${m}` : `${m} min`;
+  const [chargeStartH, chargeStartM] = state.chargeStart.time.split(':');
+  const chargeStartLabel = `${Number(chargeStartH)}:${chargeStartM} ${state.chargeStart.mer}`;
   const activeFreq = FREQS.find((f) => f.key === state.freq) ?? FREQS[0];
   const rotationNote = state.rotation ? ` · rota ${activeFreq.label.toLowerCase()}` : '';
   const risePct = (state.rise - RISE_MIN) / (RISE_MAX - RISE_MIN);
@@ -194,6 +229,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       state,
       riseLabel,
       chargeLabel,
+      chargeStartLabel,
       rotationNote,
       risePct,
       chargePct,
@@ -212,8 +248,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       adjustAlarmHour,
       adjustAlarmMinute,
       toggleAlarmMeridiem,
+      adjustChargeStartHour,
+      adjustChargeStartMinute,
+      toggleChargeStartMeridiem,
     }),
-    [state, riseLabel, chargeLabel, rotationNote, risePct, chargePct, activeFreq]
+    [state, riseLabel, chargeLabel, chargeStartLabel, rotationNote, risePct, chargePct, activeFreq]
   );
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
